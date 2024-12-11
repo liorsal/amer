@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>טופס טיפול ראשוני</title>
+  <style>
+    /* General body styling */
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    /* Centered container styling */
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #333;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
+      border: 1px solid #ff0000;
+      position: relative;
+    }
+
+    /* Logo styling */
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+    }
+
+    /* Titles styling */
+    h1 {
+      font-size: 24px;
+      color: #ff0000;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2, h3 {
+      font-size: 18px;
+      color: #ff8080;
+      margin-bottom: 10px;
+    }
+
+    /* Section styling */
+    .section {
+      margin-bottom: 25px;
+    }
+
+    /* Label styling */
+    .label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+      color: #ffcccc;
+    }
+
+    /* Input and select styling */
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ff4d4d;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #4d4d4d;
+      color: #fff;
+    }
+
+    /* Radio button group styling */
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      color: #ffcccc;
+    }
+
+    /* Buttons */
+    .button-group {
+      text-align: center;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      background: #ff0000;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background: #cc0000;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      h2, h3 {
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="image.png" alt="Logo" class="logo">
+    <h1>טופס טיפול ראשוני</h1>
+
+    <!-- פרטים אישיים -->
+    <div class="section">
+      <h2>פרטים אישיים</h2>
+      <div class="input-group">
+        <label class="label">מספר טופס:</label>
+        <input type="text" placeholder="101">
+      </div>
+      <div class="input-group">
+        <label class="label">מספר אישי:</label>
+        <input type="text" placeholder="מספר אישי">
+      </div>
+      <div class="input-group">
+        <label class="label">שם מלא:</label>
+        <input type="text" placeholder="שם מלא">
+      </div>
+    </div>
+
+    <!-- מנגנון פציעה -->
+    <div class="section">
+      <h2>מנגנון פציעה</h2>
+      <div class="radio-group">
+        <label><input type="radio" name="injury" value="מטען"> מטען</label>
+        <label><input type="radio" name="injury" value="נפילה"> נפילה</label>
+        <label><input type="radio" name="injury" value="כוויות"> כוויות</label>
+        <label><input type="radio" name="injury" value="שאיפת עשן"> שאיפת עשן</label>
+        <label><input type="radio" name="injury" value="תאונת דרכים"> תאונת דרכים</label>
+        <label><input type="radio" name="injury" value="רסיסים"> רסיסים</label>
+      </div>
+    </div>
+
+    <!-- מצב הכרה -->
+    <div class="section">
+      <h2>מצב הכרה</h2>
+      <div class="radio-group">
+        <label><input type="radio" name="consciousness" value="ערני"> ערני</label>
+        <label><input type="radio" name="consciousness" value="מגיב לקול"> מגיב לקול</label>
+        <label><input type="radio" name="consciousness" value="מגיב לכאב"> מגיב לכאב</label>
+        <label><input type="radio" name="consciousness" value="לא מגיב"> לא מגיב</label>
+      </div>
+    </div>
+
+    <!-- סכמת ABCDE -->
+    <div class="section">
+      <h2>סכמת ABCDE</h2>
+      <h3>A: נתיב אוויר</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="airway" value="חופשי"> חופשי</label>
+        <label><input type="radio" name="airway" value="חסימה חלקית"> חסימה חלקית</label>
+        <label><input type="radio" name="airway" value="חסימה מלאה"> חסימה מלאה</label>
+      </div>
+
+      <h3>B: נשימה</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="breathing" value="תקינה"> תקינה</label>
+        <label><input type="radio" name="breathing" value="לא תקינה"> לא תקינה</label>
+      </div>
+
+      <h3>C: מחזור דם</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="circulation" value="לחץ דם תקין"> לחץ דם תקין</label>
+        <label><input type="radio" name="circulation" value="לחץ דם נמוך"> לחץ דם נמוך</label>
+      </div>
+
+      <h3>D: מצב נוירולוגי</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="neurological" value="תקין"> תקין</label>
+        <label><input type="radio" name="neurological" value="לא תקין"> לא תקין</label>
+      </div>
+
+      <h3>E: חשיפה</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="exposure" value="אין פגיעות נוספות"> אין פגיעות נוספות</label>
+        <label><input type="radio" name="exposure" value="פגיעות נוספות"> פגיעות נוספות</label>
+      </div>
+    </div>
+
+    <!-- נוזלים ותרופות -->
+    <div class="section">
+      <h2>נוזלים ותרופות</h2>
+      <div class="radio-group">
+        <label><input type="radio" name="fluids" value="נוזלים"> נוזלים</label>
+        <label><input type="radio" name="fluids" value="אנטיביוטיקה"> אנטיביוטיקה</label>
+        <label><input type="radio" name="fluids" value="תרופות נגד כאבים"> תרופות נגד כאבים</label>
+        <label><input type="radio" name="fluids" value="אחר"> אחר</label>
+      </div>
+    </div>
+
+    <!-- פרטי מטפל/מטפלת -->
+    <div class="section">
+      <h2>פרטי מטפל/מטפלת</h2>
+      <div class="input-group">
+        <label class="label">שם המטפל/ת:</label>
+        <input type="text" placeholder="שם מלא">
+      </div>
+      <div class="input-group">
+        <label class="label">דרגה:</label>
+        <input type="text" placeholder="דרגה">
+      </div>
+    </div>
+
+    <!-- פינוי -->
+    <div class="section">
+      <h2>פינוי</h2>
+      <div class="input-group">
+        <label class="label">מתי קרה:</label>
+        <input type="text" placeholder="תאריך ושעה">
+      </div>
+      <div class="input-group">
+        <label class="label">יעד הפינוי:</label>
+        <input type="text" placeholder="שם היעד">
+      </div>
+      <div class="radio-group">
+        <label><input type="radio" name="urgent" value="דחוף"> דחוף</label>
+        <label><input type="radio" name="urgent" value="לא דחוף"> לא דחוף</label>
+      </div>
+      <div class="radio-group">
+        <label><input type="radio" name="transport" value="יבשתי"> יבשתי</label>
+        <label><input type="radio" name="transport" value="אווירי"> אווירי</label>
+        <label><input type="radio" name="transport" value="ימי"> ימי</label>
+      </div>
+    </div>
+
+    <!-- כפתורים -->
+    <div class="button-group">
+      <button type="submit">שמור</button>
+      <button type="reset">אפס</button>
+    </div>
+  </div>
+</body>
+</html>
